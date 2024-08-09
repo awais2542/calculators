@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            color: red;
+        }
+        button{
+            color: black;
+            width: 100px;
+            height: 30px;
+            background-color: rgb(196, 246, 255);
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: rgb(99, 211, 231);
+            box-shadow: 5px 5px 5px rgb(59, 166, 185);
+            transform: scale(1.1);
+
+        }
+        #show_zakat{
+            border: 2px solid black;
+            width: 25%;
+            height: 25px;
+            background-color: antiquewhite;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>
+            ZAKAT-CALCULATOR
+        </legend>
+        
+        <form onsubmit="check_zakat() ; return false;">
+            <fieldset>
+                <center><h2>What You Own</h2></center>
+            <label for="num1">Cash At home and Bank</label>
+            <input type="number" name="num1" id="cash" placeholder="0.00">
+            &nbsp;
+            <label for="num2">Value Of Gold You Own</label>
+            <input type="number" name="num2" id="gold" placeholder="0.00">
+            &nbsp;
+            <label for="num3">Value Of silver You Own</label>
+            <input type="number" name="num3" id="silver" placeholder="0.00">
+            &nbsp;
+            <hr>
+            <label for="num4">Value Of investment and shares</label> 
+            <input type="number" name="num4" id="inv_share" placeholder="0.00">
+            &nbsp;
+            <label for="num5">Money owed to You</label>
+            <input type="number" name="num5" id="owed" placeholder="0.00">
+            &nbsp;
+            <label for="num6">Value Of Goods And Other Stock for sale</label>
+            <input type="number" name="num6" id="stock" placeholder="0.00"><br>
+            <hr>
+            
+            <label for="num7">Other Assets</label>
+            <input type="number" name="num7" id="other" placeholder="0.00">
+            </fieldset>
+
+            <fieldset>
+               
+                    <center><h2>What You Owe</h2></center>
+                    <label for="num8">Expenses(tex,rent,bills)</label>
+                    <input type="number" name="num8" id="expense" placeholder="0.00" >
+                    &nbsp;
+                    <label for="num9">Short Terms Debts</label>
+                    <input type="number" name="num9" id="short_term_dbt" placeholder="0.00" >
+                    &nbsp;
+                    <label for="num10">Other Expenses</label>
+                    <input type="number" name="num10" id="other_exp" placeholder="0.00" >
+                    <hr>
+                    <!-- show zakat  -->
+                    <center>
+                        <label for="za">Your Zakat that you will pay</label>
+                        <p id="show_zakat"></p>
+                    </center>
+                       <!--  -->
+                    <center>
+                        <button type="submit" onclick="check_zakat()">Calculate</button>
+                    </center>
+                
+            </fieldset>
+        </form>
+    </fieldset>
+  
+    <p>
+        <legend>NOTE</legend>
+        *Zakat is obligatory on all Muslims who are in possession of surplus wealth for a full lunar year, exceeding the monetary value of 87.48 grams of gold, which currently stands at  1,875,071.23 PKR (last updated 2024-08-07 11:00:19am). This value fluctuates slightly every day.
+** Gold Price Taken from <a href="https://hamariweb.com/finance/gold_rate/gram">https://hamariweb.com/finance/gold_rate/gram</a>
+    </p>
+
+
+
+
+
+
+    <script src="./zakat.js"></script>
+</body>
+</html>
