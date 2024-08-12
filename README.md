@@ -1,1 +1,1 @@
-# zakat-calculator
+# calculators
