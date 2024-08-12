@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+                display: block;
+                align-items: center;
+                text-align: center;
+                padding: 20px;
+        }
+        form input{
+            margin-top: 10px;
+        }
+        button{
+            margin-top: 20px;
+            border: 2px solid rgb(91, 184, 221);
+            background-color: skyblue;
+            height: 25px;
+            width: 10%;
+            border-radius: 5px;
+            font-size: large;
+            transition: all ease .4s;
+        }
+        button:hover{
+            background-color: rgb(84, 169, 202);
+            transform: scale(1.1);
+        }
+        div{
+            border: 1px solid black;
+            margin-top: 10px;
+        }
+        select{
+            margin-top: 10px;
+        }
+        p{
+            border: 2px solid black;
+            display: flex;
+            align-items: center;
+            width: 40%;
+            height: 60px;
+            font-size: large;
+            color: red;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>BMR_CALCULATOR</legend>
+        <form id="form" onsubmit="bmr_calc(); return false;">
+            <label for="age">AGE:</label>
+            <input type="number" name="age" id="age" min="15" max="80"> <span>(Ages 15 - 80)</span><br>
+            <label>GENDER:</label>
+            <select required id="gender">
+                <option value="male" selected>Male</option>
+                <option value="female">Female</option>
+            </select> <br>
+            <label for="height">Height:</label>
+            <input type="number" name="height" id="height" placeholder="Cm"><br>
+            <label for="weight">weight:</label>
+            <input type="number" name="weight" id="weight" placeholder="Kg"><br>
+            <label for="activity">Activity level</label>
+            <select required id="activity">
+                <option value="1.2" selected >Secondary Active</option>
+                <option value="1.375">Lightly Active</option>
+                <option value="1.55">Moderately Active</option>
+                <option value="1.725">Very Active</option>
+                <option value="1.9">Super Active</option>
+            </select>
+            <center>
+                <button type="submit" onclick="bmr_calc()"> Calculate</button>
+            </center>
+           
+            <center><h1>Result</h1>
+                <p id="show"></p>
+            
+            </center>
+                
+            
+        </form>
+    </fieldset>
+
+
+    <script src="./bmr.js"></script>
+</body>
+</html>
